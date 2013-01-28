@@ -1,53 +1,37 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v2/themes/css/cartodb.css" />
-        <!--[if lte IE 8]>
-            <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v2/themes/css/cartodb.ie.css" />
-        <![endif]-->
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     </head>
-    <body>
-       
-        <div id="map"></div>
+    <body style="padding-top:40px;">
 
-    </body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">Kansas City Cool</a>
+        </div>
+      </div>
+    </div>
 
-    <!-- include cartodb.js library -->
-    <script src="http://libs.cartocdn.com/cartodb.js/v2/cartodb.js"></script>
-    <script>
+<div class="row">
+<iframe width="100%" height="370px" src="http://startupgenome.com/city/kcmo-mo-us?embed=1#&category_ids[]=2" frameborder="1" allowfullscreen></iframe>
+</div>
 
-        function main() {
-          cartodb.createVis('map', 'http://ondrae.cartodb.com/api/v1/viz/17170/viz.json', {
-              shareable: false,
-              title: false,
-              description: false,
-              search: false,
-              tiles_loader: false,
-              center_lat: 39.10,
-              center_lon: -94.58,
-              zoom: 12
-          })
-          .done(function(vis, layers) {
-            // layer 0 is the base layer, layer 1 is cartodb layer
-            layers[1].on('featureOver', function(e, pos, latlng, data) {
-              cartodb.log.log(e, pos, latlng, data);
-            });
+<div class="row">
+  <div class="span4">
+    <a class="twitter-timeline" href="https://twitter.com/search?q=%23kc" data-widget-id="295953014706028544">Tweets about "#kc"</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </div>
 
-            // you can get the native map to work with it
-            // depending if you use google maps or leaflet
-            map = vis.getNativeMap();
-            // map.setZoom(3)
-            // map.setCenter(new google.maps.Latlng(...))
-          })
-          .error(function(err) {
-            console.log(err);
-          });
+  <div class="span4" id="widgetmain" style="text-align:left;overflow-y:auto;overflow-x:hidden;width:450px;background-color:#transparent; border:1px solid #333333;"><div id="rsswidget" style="height:350px;"><iframe src="http://us1.rssfeedwidget.com/getrss.php?time=1359397503693&amp;x=http%3A%2F%2Fwww.reddit.com%2Fr%2Fkansascity%2F.rss&amp;w=500&amp;h=350&amp;bc=333333&amp;bw=1&amp;bgc=transparent&amp;m=20&amp;it=true&amp;t=(default)&amp;tc=333333&amp;ts=15&amp;tb=transparent&amp;il=true&amp;lc=0000FF&amp;ls=14&amp;lb=false&amp;id=true&amp;dc=333333&amp;ds=14&amp;idt=true&amp;dtc=284F2D&amp;dts=12" border="0" hspace="0" vspace="0" frameborder="no" marginwidth="0" marginheight="0" style="border:0; padding:0; margin:0; width:500px; height:350px;" id="rssOutput">Reading RSS Feed ...</iframe></div><div style="text-align:right;margin-bottom:0;border-top:1px solid #333333;" id="widgetbottom"><span style="font-size:70%"><a href="http://www.rssfeedwidget.com">rss feed widget</a>&nbsp;</span><br></div></div>
 
 
-        }
+  <div class="span4" id="widgetmain" style="text-align:left;overflow-y:auto;overflow-x:hidden;width:450px;background-color:#transparent; border:1px solid #333333;"><div id="rsswidget" style="height:350px;"><iframe src="http://us1.rssfeedwidget.com/getrss.php?time=1359397580675&amp;x=http%3A%2F%2Fwww.reddit.com%2Fr%2Fkctech%2F.rss&amp;w=450&amp;h=350&amp;bc=333333&amp;bw=1&amp;bgc=transparent&amp;m=20&amp;it=true&amp;t=(default)&amp;tc=333333&amp;ts=15&amp;tb=transparent&amp;il=true&amp;lc=0000FF&amp;ls=14&amp;lb=false&amp;id=true&amp;dc=333333&amp;ds=14&amp;idt=true&amp;dtc=284F2D&amp;dts=12" border="0" hspace="0" vspace="0" frameborder="no" marginwidth="0" marginheight="0" style="border:0; padding:0; margin:0; width:450px; height:350px;" id="rssOutput">Reading RSS Feed ...</iframe></div><div style="text-align:right;margin-bottom:0;border-top:1px solid #333333;" id="widgetbottom"><span style="font-size:70%"><a href="http://www.rssfeedwidget.com">rss feed widget</a>&nbsp;</span><br></div></div>
+</div>
 
-        window.onload = main;
-
-     </script>
+</body>
 
 
 </html>
